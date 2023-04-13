@@ -31,20 +31,46 @@
       width: 355px;
     }
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    form {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    label {
+      position: relative;
+      left: -8px;
+    }
+
+    input {
+      width: 90px;
+      height:60px;
+    }
+    .attribution { 
+      font-size: 11px; 
+      text-align: center; 
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
   </style>
 </head>
 <body>
 <div class="card">
   <div class="form-container">
     <form>
-      <label for="day">Day</label><br>
-      <input type="number" value="DD"><br>
-      <label for="month">Month</label><br>
-      <input type="number" value="MM"><br>
-      <label for="year">Year</label><br>
-      <input type="number" value="YYYY"><br>
+      <div>
+        <label for="day">Day</label><br>
+        <input type="number" value="DD"><br>
+      </div>
+      <div>
+        <label for="month">Month</label><br>
+        <input type="number" value="MM"><br>
+      </div>
+      <div>
+        <label for="year">Year</label><br>
+        <input type="number" value="YYYY"><br>
+      </div>
     </form>
   </div>
   <div class="divider">
