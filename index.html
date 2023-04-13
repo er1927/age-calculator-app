@@ -29,9 +29,10 @@
     .card {
       display: flex;
       flex-direction: column;
-      width: 355px;
+      width: 340px;
       background-color: white;
       padding: 20px;
+      margin: 60px auto;
       border-radius: 10px;
     }
 
@@ -52,10 +53,11 @@
     }
 
     input {
-      width: 90px;
+      width:90px;
       height:60px;
       border-radius: 10px;
       border: solid 1px gray;
+      font-size: 28px;
     }
 
     .divider {
@@ -92,7 +94,6 @@
     .attribution { 
       font-size: 11px; 
       text-align: center;
-      padding-top: 40px; 
     }
 
     .attribution a { 
@@ -106,15 +107,15 @@
     <form>
       <div>
         <label for="day">Day</label><br>
-        <input type="number" value="DD"><br>
+        <input type="number" placeholder="DD"><br>
       </div>
       <div>
         <label for="month">Month</label><br>
-        <input type="number" value="MM"><br>
+        <input type="number" placeholder="MM"><br>
       </div>
       <div>
         <label for="year">Year</label><br>
-        <input type="number" value="YYYY"><br>
+        <input type="number" placeholder="YYYY"><br>
       </div>
     </form>
   </div>
