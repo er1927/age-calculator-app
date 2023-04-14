@@ -164,15 +164,15 @@
     <form>
       <div class="form-element">
         <label for="day">Day</label><br>
-        <input type="number" placeholder="DD" id="day" onblur="calculateDays()"><br>
+        <input type="number" placeholder="DD" id="day" onblur="calculate()"><br>
       </div>
       <div class="form-element">
         <label for="month">Month</label><br>
-        <input type="number" placeholder="MM" id="month" onblur="calculateMonths()"><br>
+        <input type="number" placeholder="MM" id="month" onblur="calculate()"><br>
       </div>
       <div class="form-element">
         <label for="year">Year</label><br>
-        <input type="number" placeholder="YYYY" id="year"  onblur="calculateYears()"><br>
+        <input type="number" placeholder="YYYY" id="year"  onblur="calculate()"><br>
       </div>
     </form>
   </div>
@@ -195,6 +195,7 @@
     Coded by <a href="https://github.com/er1927">Elizabeth Roberts</a>.
   </div>
   <script>
+
     const yourYear = document.getElementById("year").value;
     const displayYears = document.getElementById("displayYears");
     const displayMonths = document.getElementById("displayMonths");
@@ -202,7 +203,8 @@
     const button = document.getElementById("button");
     const currentDate = new Date()
 
-    function calculateYears() {
+    function calculate() {
+      function calculateYears() {
       const currentYear = currentDate.getFullYear()
 
       function getYourYear() {
@@ -243,6 +245,7 @@
 
     }
     calculateDays();
+    }
 
   </script>
 </body>
