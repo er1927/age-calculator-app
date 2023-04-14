@@ -179,12 +179,12 @@
   <div class="button-container">
     <div class="divider">
     </div>
-    <div class="button">
+    <div class="button" id="button">
       <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
     </div>
   </div>
   <div class="results">
-    <p><span>---</span> years</p>
+    <p><span id="displayYears">---</span> years</p>
     <p><span>---</span> months</p>
     <p><span>---</span> days</p>
   </div>
@@ -196,29 +196,28 @@
   </div>
   <script>
     const yourYear = document.getElementById("year").value;
+    const displayYears = document.getElementById("displayYears");
+    const button = document.getElementById("button");
     const currentDate = new Date()
 
     function calculateYears() {
       const currentYear = currentDate.getFullYear()
 
       function getYourYear() {
-      const yourYear = document.getElementById('year').value; 
-      const yourYearNumber = parseInt(yourYear);
-      // console.log(yourYearNumber);
-
-      const resultYears = currentYear - yourYearNumber;
-      console.log(resultYears);
+        const yourYear = document.getElementById('year').value; 
+        const yourYearNumber = parseInt(yourYear);
+        const resultYears = currentYear - yourYearNumber;
+        displayYears.innerText = resultYears;
       }
       getYourYear();
-
-
     }
     calculateYears();
+    
+    // function populateResultYears() {
+    //   displayYears.innerHTML = resultYears;
+    // }
 
-  // const two = 2;
-  // const three =3;
-
-  // console.log(two + three)
+    // button.addEventListener("click", populateResultYears())
     
 
   </script>
