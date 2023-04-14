@@ -164,15 +164,15 @@
     <form>
       <div class="form-element">
         <label for="day">Day</label><br>
-        <input type="number" placeholder="DD" maxlength="2"><br>
+        <input type="number" placeholder="DD" ><br>
       </div>
       <div class="form-element">
         <label for="month">Month</label><br>
-        <input type="number" placeholder="MM" maxlength="2"><br>
+        <input type="number" placeholder="MM" id="month" onblur="calculateMonths()"><br>
       </div>
       <div class="form-element">
         <label for="year">Year</label><br>
-        <input type="number" placeholder="YYYY" id="year" maxlength="4" onblur="calculateYears()"><br>
+        <input type="number" placeholder="YYYY" id="year"  onblur="calculateYears()"><br>
       </div>
     </form>
   </div>
@@ -185,7 +185,7 @@
   </div>
   <div class="results">
     <p><span id="displayYears">---</span> years</p>
-    <p><span>---</span> months</p>
+    <p><span id="displayMonths">---</span> months</p>
     <p><span>---</span> days</p>
   </div>
 </div>
@@ -197,6 +197,7 @@
   <script>
     const yourYear = document.getElementById("year").value;
     const displayYears = document.getElementById("displayYears");
+    const displayMonths = document.getElementById("displayMonths");
     const button = document.getElementById("button");
     const currentDate = new Date()
 
@@ -213,12 +214,21 @@
     }
     calculateYears();
     
-    // function populateResultYears() {
-    //   displayYears.innerHTML = resultYears;
-    // }
-
-    // button.addEventListener("click", populateResultYears())
+    function calculateMonths() {
+      const currentMonth = currentDate.getMonth();
+      const yourMonth = document.getElementById('month').value;
+      
+      if (currentMonth >= parseInt(yourMonth)) {
+      let resultMonths = currentMonth - yourMonth;
+      displayMonths.innerText = resultMonths;
+      } else {
+        let resultMonths = 12 + currentMonth - yourMonth;
+        displayMonths.innerText = resultMonths; 
+      } 
+      
     
+    }
+    calculateMonths();
 
   </script>
 </body>
