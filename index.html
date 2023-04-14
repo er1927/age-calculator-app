@@ -164,7 +164,7 @@
     <form>
       <div class="form-element">
         <label for="day">Day</label><br>
-        <input type="number" placeholder="DD" ><br>
+        <input type="number" placeholder="DD" id="day" onblur="calculateDays()"><br>
       </div>
       <div class="form-element">
         <label for="month">Month</label><br>
@@ -186,7 +186,7 @@
   <div class="results">
     <p><span id="displayYears">---</span> years</p>
     <p><span id="displayMonths">---</span> months</p>
-    <p><span>---</span> days</p>
+    <p><span id="displayDays">---</span> days</p>
   </div>
 </div>
  
@@ -198,6 +198,7 @@
     const yourYear = document.getElementById("year").value;
     const displayYears = document.getElementById("displayYears");
     const displayMonths = document.getElementById("displayMonths");
+    const displayDays = document.getElementById("displayDays");
     const button = document.getElementById("button");
     const currentDate = new Date()
 
@@ -224,11 +225,24 @@
       } else {
         let resultMonths = 12 + currentMonth - yourMonth;
         displayMonths.innerText = resultMonths; 
-      } 
-      
-    
+      }     
     }
     calculateMonths();
+
+    function calculateDays() {
+      const currentDay = currentDate.getDay();
+      const yourDay = document.getElementById('day').value;
+
+      if (currentDay >= parseInt(yourDay)) {
+        let resultDay = currentDay - yourDay;
+        displayDays.innerText = resultDay;
+      } else {
+        let resultDay = 31 + currentDay - yourDay;
+        displayDays.innerText = resultDay;
+      }
+
+    }
+    calculateDays();
 
   </script>
 </body>
