@@ -54,12 +54,12 @@
     }
 
     input {
-      width:80px;
+      width:85px;
       height:60px;
       border-radius: 10px;
       border: solid 1px rgb(173, 173, 173);
-      font-size: 28px;
-      padding-left:6px;
+      font-size: 26px;
+      padding-left:4px;
     }
 
     input:hover {
@@ -164,15 +164,15 @@
     <form>
       <div class="form-element">
         <label for="day">Day</label><br>
-        <input type="number" placeholder="DD"><br>
+        <input type="number" placeholder="DD" maxlength="2"><br>
       </div>
       <div class="form-element">
         <label for="month">Month</label><br>
-        <input type="number" placeholder="MM"><br>
+        <input type="number" placeholder="MM" maxlength="2"><br>
       </div>
       <div class="form-element">
         <label for="year">Year</label><br>
-        <input type="number" placeholder="YYYY"><br>
+        <input type="number" placeholder="YYYY" id="year" maxlength="4" onblur="calculateYears()"><br>
       </div>
     </form>
   </div>
@@ -194,5 +194,33 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br> 
     Coded by <a href="https://github.com/er1927">Elizabeth Roberts</a>.
   </div>
+  <script>
+    const yourYear = document.getElementById("year").value;
+    const currentDate = new Date()
+
+    function calculateYears() {
+      const currentYear = currentDate.getFullYear()
+
+      function getYourYear() {
+      const yourYear = document.getElementById('year').value; 
+      const yourYearNumber = parseInt(yourYear);
+      // console.log(yourYearNumber);
+
+      const resultYears = currentYear - yourYearNumber;
+      console.log(resultYears);
+      }
+      getYourYear();
+
+
+    }
+    calculateYears();
+
+  // const two = 2;
+  // const three =3;
+
+  // console.log(two + three)
+    
+
+  </script>
 </body>
 </html>
