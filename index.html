@@ -15,16 +15,19 @@
   <div class="form-container">
     <form action="page_submission_URL" method="POST">
       <div class="form-element">
-        <label for="day">Day</label><br>
+        <label for="day" id="label-day">Day</label><br>
         <input type="number" type="submit" placeholder="DD" id="day" min="1" max="31" required /><br>
+        <span id="day-error-message"></span>
       </div>
       <div class="form-element">
-        <label for="month">Month</label><br>
+        <label for="month" id="label-month">Month</label><br>
         <input type="number" type="submit" placeholder="MM" id="month" min="1" max="12" required /><br>
+        <span id="month-error-message"></span>
       </div>
       <div class="form-element">
-        <label for="year">Year</label><br>
+        <label for="year" id="label-year">Year</label><br>
         <input type="number" type="submit" placeholder="YYYY" id="year" max="2023" required /><br>
+        <span id="year-error-message"></span>
       </div>
     </form>
   </div>
@@ -47,6 +50,10 @@
     Coded by <a href="https://github.com/er1927">Elizabeth Roberts</a>.
   </div>
   <script>
+    const dayErrorMessage = document.getElementById("day-error-message");
+    const dayLabel = document.getElementById("label-day");
+    const monthErrorMessage = document.getElementById("month-error-message");
+    const yearErrorMessage = document.getElementById("year-error-message");
     const yourYear = document.getElementById("year").value;
     const displayYears = document.getElementById("displayYears");
     const displayMonths = document.getElementById("displayMonths");
@@ -56,6 +63,8 @@
 
     
     function calculate() {
+
+
 
       function calculateYears() {
       const currentYear = currentDate.getFullYear();
@@ -87,6 +96,12 @@
     function calculateDays() {
       const currentDay = currentDate.getDay();
       const yourDay = document.getElementById('day').value;
+
+      if (yourDay === "" ) {
+        dayErrorMessage.innerHTML = "This field is required";
+        dayLabel.style.color = "red";
+        return
+      }
 
       if (currentDay >= parseInt(yourDay)) {
         let resultDay = currentDay - yourDay;

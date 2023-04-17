@@ -49,6 +49,14 @@
         border: solid 1px rgb(116, 116, 116);
       }
   
+
+      #day-error-message, 
+      #month-error-message,
+      #year-error-message {
+        color:red;
+        font-size: 10px;
+      }
+
       .divider {
         border-bottom: solid 1px rgb(173, 173, 173);
         padding:30px;
