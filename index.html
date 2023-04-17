@@ -55,7 +55,7 @@
     const monthErrorMessage = document.getElementById("month-error-message");
     const monthLabel = document.getElementById("label-month");
     const yearErrorMessage = document.getElementById("year-error-message");
-    const yearLabel = document.getElementById("label-year")
+    const yearLabel = document.getElementById("label-year");
     const yourYear = document.getElementById("year").value;
     const displayYears = document.getElementById("displayYears");
     const displayMonths = document.getElementById("displayMonths");
@@ -79,7 +79,10 @@
           yearErrorMessage.innerHTML = "This field is required";
           yearLabel.style.color = "red";
           return
-        }
+          } else {
+          yearErrorMessage.innerHTML = "";
+          yearLabel.style.color ="rgb(173, 173, 173)";
+          }
 
           const resultYears = currentYear - yourYearNumber;
           displayYears.innerText = resultYears;
@@ -96,6 +99,9 @@
         monthErrorMessage.innerHTML = "This field is required";
         monthLabel.style.color = "red";
         return
+      } else {
+        monthErrorMessage.innerHTML = "";
+        monthLabel.style.color ="rgb(173, 173, 173)";
       }
       
       if (currentMonth >= parseInt(yourMonth)) {
@@ -116,6 +122,9 @@
         dayErrorMessage.innerHTML = "This field is required";
         dayLabel.style.color = "red";
         return
+      } else {
+        dayErrorMessage.innerHTML = "";
+        dayLabel.style.color ="rgb(173, 173, 173)";
       }
 
       if (currentDay >= parseInt(yourDay)) {
