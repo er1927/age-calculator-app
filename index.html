@@ -78,7 +78,7 @@
           if (yourYear === "" ) {
           yearErrorMessage.innerHTML = "This field is required";
           yearLabel.style.color = "red";
-          return
+          
           } else {
           yearErrorMessage.innerHTML = "";
           yearLabel.style.color ="rgb(173, 173, 173)";
@@ -121,7 +121,7 @@
       if (yourDay === "" ) {
         dayErrorMessage.innerHTML = "This field is required";
         dayLabel.style.color = "red";
-        return
+        return;
       } else {
         dayErrorMessage.innerHTML = "";
         dayLabel.style.color ="rgb(173, 173, 173)";
