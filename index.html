@@ -47,7 +47,7 @@
  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br> 
-    Coded by <a href="https://github.com/er1927">Elizabeth Roberts</a>.
+    Coded by <a href="https://github.com/er1927"  target="_blank">Elizabeth Roberts</a>.
   </div>
   <script>
     const dayErrorMessage = document.getElementById("day-error-message");
@@ -66,8 +66,6 @@
     
     function calculate() {
 
-
-
       function calculateYears() {
       const currentYear = currentDate.getFullYear();
 
@@ -75,7 +73,7 @@
           const yourYear = document.getElementById('year').value; 
           const yourYearNumber = parseInt(yourYear);
           
-          if (yourYear === "" ) {
+          if (yourYear == "" || yourYear == null ) {
           yearErrorMessage.innerHTML = "This field is required";
           yearLabel.style.color = "red";
           
@@ -88,7 +86,7 @@
           displayYears.innerText = resultYears;
         }
         getYourYear();
-      }
+        }
       calculateYears();
 
     function calculateMonths() {
